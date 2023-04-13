@@ -45,7 +45,7 @@ class RecipeSerializer(serializers.ModelSerializer):
         self._get_or_create_tags(tags, recipe)
 
         return recipe
-    
+
     def update(self, instance, validated_data):
         """Update recipe."""
         tags = validated_data.pop('tags', None)
