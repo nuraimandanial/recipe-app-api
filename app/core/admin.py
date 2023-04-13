@@ -17,30 +17,30 @@ class UserAdmin(BaseUserAdmin):
         (None, {'fields': ('email', 'password')}),
         (_('Personal Info'), {'fields': ('name',)}),
         (
-          _('Permissions'),
-          {
-            'fields': (
-              'is_active',
-              'is_staff',
-              'is_superuser',
-            )
-          }
+            _('Permissions'),
+            {
+                'fields': (
+                    'is_active',
+                    'is_staff',
+                    'is_superuser',
+                )
+            }
         ),
         (_('Important Dates'), {'fields': ('last_login',)}),
     )
     readonly_fields = ['last_login']
     add_fieldsets = (
         (None, {
-          'classes': ('wide',),
-          'fields': (
-            'email',
-            'password1',
-            'password2',
-            'name',
-            'is_active',
-            'is_staff',
-            'is_superuser',
-          ),
+            'classes': ('wide',),
+            'fields': (
+                'email',
+                'password1',
+                'password2',
+                'name',
+                'is_active',
+                'is_staff',
+                'is_superuser',
+            ),
         }),
     )
 
@@ -48,3 +48,4 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Recipe)
 admin.site.register(models.Tag)
+admin.site.register(models.Ingredient)
